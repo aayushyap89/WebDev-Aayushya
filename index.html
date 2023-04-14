@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_US">
 <head>
-  <meta charset="UTF-8">
-  <title>Contents</title>
+  <title>Assignments</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    #file-links {
+      text-align: left;
+    }
+
+    #file-links a {
+      display: block;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var fileLinks = document.getElementById("file-links");
+      var files = [
+        {name: "2.6 Style Practice",
+          path: "2.6.html"},
+        {name: "2.9 Heading Practice",
+          path: "2.9.html"},
+        {name: "2.10 About Me Practice",
+          path: "2.10.html"},
+        {name: "2.11 WebPage Recreation Practice",
+          path: "2.11.html"},
+        {name: "3.8 Images, Links, List, and Form Practice",
+          path: "3.8.html"}
+      ];
+
+      for (var i = 0; i < files.length; i++) {
+        var link = document.createElement("a");
+        link.href = files[i].path;
+        link.target = "_blank";
+        link.innerHTML = files[i].name;
+        fileLinks.appendChild(link);
+      }
+    }
+  </script>
 </head>
 <body>
-  <h1>Contents</h1>
-  <ul>
-    <li><a href="2.9.html">2.9 Header Practice</a></li>
-    <li><a href="2.10.html">2.10 About Me Practice</a></li>
-    <li><a href="2.11.html">2.11 Animalia</a></li>
-    <li><a href="3.9.html">3.9 Lists</a></li>
-  </ul>
+<h1>Assignments</h1>
+
+<div id="file-links"></div>
 </body>
 </html>
